@@ -18,6 +18,7 @@
                                         <tr>
                                             <th>Ad</th>
                                             <th>Email</th>
+                                            <th>Roller</th>
                                             <th>Oluşturulma Tarihi</th>
                                         </tr>
                                     </thead>
@@ -25,6 +26,7 @@
                                          <tr>
                                             <th>Ad</th>
                                             <th>Email</th>
+                                            <th>Roller</th>
                                             <th>Oluşturulma Tarihi</th>
                                         </tr>
                                     </tfoot>
@@ -33,6 +35,11 @@
                                             <tr>
                                             <td> {{$user->name}} </td>
                                             <td> {{$user->email}} </td>
+                                            <td>
+                                                @foreach ($user->roles as $role )
+                                                    {{$role->title}}
+                                                @endforeach
+                                            </td>
                                             <td> {{$user->created_at->format('d/m/Y H:i:s') }} </td>
                                             </tr>
                                          @endforeach

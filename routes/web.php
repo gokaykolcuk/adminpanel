@@ -29,4 +29,4 @@ Route::post('/admin/login', [MemberController::class, 'login'])->name('admin.log
 Route::post('/admin/logout', [MemberController::class, 'logout'])->name('admin.logout.post');
 Route::post('/admin/registerpost',[MemberController::class, 'register'])->name('admin.registerpost');
 
-Route::get('admin/users',[UserController::class, 'index'])->name('admin.users.index');
+Route::get('admin/users',[UserController::class, 'index'])->middleware('auth')->name('admin.users.index');
