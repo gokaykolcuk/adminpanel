@@ -30,3 +30,6 @@ Route::post('/admin/logout', [MemberController::class, 'logout'])->name('admin.l
 Route::post('/admin/registerpost',[MemberController::class, 'register'])->name('admin.registerpost');
 
 Route::get('admin/users',[UserController::class, 'index'])->middleware('auth')->name('admin.users.index');
+Route::get('admin/users/{user}', [UserController::class, 'show'])->middleware('auth')->name('admin.users.show');
+
+Route::post('admin/users/{user}',[UserController::class, 'updatePermissions'])->middleware('auth')->name('admin.users.updatePermissions');

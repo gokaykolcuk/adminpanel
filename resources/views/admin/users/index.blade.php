@@ -20,6 +20,7 @@
                                             <th>Email</th>
                                             <th>Roller</th>
                                             <th>Oluşturulma Tarihi</th>
+                                            <th>Detay</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -28,6 +29,8 @@
                                             <th>Email</th>
                                             <th>Roller</th>
                                             <th>Oluşturulma Tarihi</th>
+                                            <th>Detay</th>
+
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -41,6 +44,9 @@
                                                 @endforeach
                                             </td>
                                             <td> {{$user->created_at->format('d/m/Y H:i:s') }} </td>
+                                            <td>
+                                                <a href="{{route('admin.users.show',$user->id)}}" class="btn btn-primary">Detay</a>
+                                            </td>
                                             </tr>
                                          @endforeach
 
